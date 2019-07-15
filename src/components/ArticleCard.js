@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/ArticleList.css'
 
-const ArticleCard = () => {
+const ArticleCard = ({article}) => {
     return (
-        <div>
-            I am an article
-        </div>
+        <li className='article-card'>
+            <p>{article.title}</p>
+        </li>
     );
 };
 

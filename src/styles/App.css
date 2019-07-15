@@ -17,3 +17,13 @@ body {
   "main"
   "footer"
 }
+
+.loading-msg {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+.loading-msg span {
+  color: #ba1531;
+}
