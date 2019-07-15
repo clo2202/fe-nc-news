@@ -1,0 +1,21 @@
+.nav {
+    grid-area: nav;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+    background: white;
+}
+
+nav a {
+    color: #ba1531;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+nav a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }

@@ -1,0 +1,14 @@
+.footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #0B0C0C;
+    color:white;
+    padding: 10px;
+    letter-spacing: 2px;
+    margin: 0;
+  }

@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from '@reach/router'
+import '../styles/Nav.css'
 
-const Nav = () => {
+const Nav = ({topics}) => {
+    console.log(topics)
     return (
-        <nav>
+        <nav className='nav'>
             <Link to='/'>Home</Link>
-            <Link to='/topic1'>Topic 1</Link>
-            <Link to='/topic2'>Topic 2</Link>
+            {topics.map(topic => {
+                return (
+                    <Link to={`/${topic.slug}`} key={topic.slug}>{topic.slug}</Link>
+                )
+            })}
         </nav>
     );
 };

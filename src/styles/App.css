@@ -1,0 +1,19 @@
+body {
+ margin:0;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr 12fr 1fr;
+  grid-template-areas:
+  "header"
+  "nav"
+  "main"
+  "footer"
+}
