@@ -12,9 +12,9 @@ class ArticleList extends Component {
     const { articles } = this.state;
     const { topic } = this.props
     return (
-      <section>  
-      {topic ? <p>Articles on {topic}</p> : <p>All articles</p>} 
-      <ul className='article-list'>
+      <section className='articles'>  
+      {topic ? <h2>Articles on {topic}</h2> : <h2>All articles</h2>} 
+      <ul className='articles-list'>
         {articles.map(article => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
@@ -30,7 +30,7 @@ class ArticleList extends Component {
   fetchArticles = async () => {
     const { topic } = this.props;
     const articles = await api.getArticles(topic);
-    this.setState({ articles });
+    this.setState({ articles, isLoading: false });
   };
 
   componentDidUpdate = (prevProps, prevState) => {

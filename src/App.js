@@ -5,6 +5,7 @@ import { Router } from "@reach/router";
 import "../src/styles/App.css";
 import Footer from "./components/Footer";
 import ArticleList from "./components/ArticleList";
+import ArticlePage from "./components/ArticlePage";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
     <Nav />
     <Router className="main">
       <ArticleList path="/" />
-      <ArticleList path="/articles/:topic" />
+      <ArticleList path="/topics/:topic" />
+      <ArticlePage path="/articles/:article_id"/>
     </Router>
     <Footer />
   </div>

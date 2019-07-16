@@ -6,16 +6,17 @@
     justify-content: space-evenly;
     padding: 5px;
     background: white;
+    border: solid 2px hotpink;
 }
 
-nav a {
+.nav a {
     color: #ba1531;
     text-decoration: none;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-nav a:hover {
+.nav a:hover {
     cursor: pointer;
     text-decoration: underline;
   }

@@ -5,17 +5,17 @@ import * as api from "../utils/api";
 
 class Nav extends Component {
     state = {
-        topics: [],
+        topics: []
       };
 
     render() {
         const { topics } = this.state;
         return (
-            <nav className="nav">
+            <nav className='nav'>
             <Link to="/">Home</Link>
             {topics.map(topic => {
               return (
-                <Link to={`articles/${topic.slug}`} key={topic.slug}>
+                <Link to={`topics/${topic.slug}`} key={topic.slug}>
                   {topic.slug}
                 </Link>
               );
@@ -30,7 +30,7 @@ class Nav extends Component {
     
       fetchTopics = async () => {
         const topics = await api.getTopics();
-        this.setState({ topics});
+        this.setState({ topics, isLoading: false });
       };
 }
 

@@ -13,3 +13,8 @@ export const getArticles = async topic => {
   });
   return data.articles;
 };
+
+export const getArticleById = async (article_id) => {
+  const { data } = await axios.get(`${baseUrl}/articles/${article_id}`)
+  return data.article
+}

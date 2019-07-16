@@ -1,4 +1,53 @@
 .main {
   grid-area: main;
   overflow-y: scroll;
+  border: solid 2px green;
+}
+
+.articles h3 {
+  text-transform: capitalize;
+}
+
+.articles-list {
+  grid-area: main; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+
+.article-card {
+  list-style: none;
+  border: solid #0B0C0C 1px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ba1531;
+}
+
+.article-card:hover {
+  box-shadow: 0px 0px 5px 2px #ba1531;
+  transform: scale(1.02);
+}
+
+.article-card h4 {
+  text-decoration: none;
+  color: #ba1531;
+  margin: 5px;
+}
+
+.article-card p {
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+.article-card a:hover {
+  cursor: pointer;
 }
