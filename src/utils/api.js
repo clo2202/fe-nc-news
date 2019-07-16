@@ -18,3 +18,13 @@ export const getArticleById = async (article_id) => {
   const { data } = await axios.get(`${baseUrl}/articles/${article_id}`)
   return data.article
 }
+
+export const getCommentsbyArticle = async (article_id) => {
+  const { data } = await axios.get(`${baseUrl}/articles/${article_id}/comments`)
+  return data.comments
+}
+
+export const postComment = async (article_id, newComment) => {
+  const { data } = await axios.post(`${baseUrl}/articles/${article_id}/comments`, newComment)
+  return data.comment
+}
