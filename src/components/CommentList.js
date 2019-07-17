@@ -1,20 +1,37 @@
-import React from "react";
+import Vote from "./Vote";
+import "../styles/Comments.css";
+import React, { Component } from "react";
 
-const CommentList = ({ comments }) => {
-  return (
-    <div>
-      <h4>{comments.length} Comments</h4>
-      <ul>
-        {comments.map(comment => (
-          <li key={comment.comment_id}>
-            <p>{comment.author}</p>
-            <p>{comment.votes} votes</p>
-            <p>{comment.body}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+class CommentList extends Component {
+  render() {
+    const { comments, removeComment } = this.props;
+    return (
+      <div className="comment-section">
+        <h4><span role="img" aria-label="comment">&#128172;</span> {comments.length} Comments</h4>
+        <ul className="comments-list">
+          {comments.map(comment => (
+            <li className="comment" key={comment.comment_id}>
+              <Vote
+                votes={comment.votes}
+                id={comment.comment_id}
+                section="comments"
+              />
+              <div>
+                <p>{comment.body}</p>
+                <p>
+                  <b>Posted by: </b>
+                  {comment.author}
+                </p>
+                {comment.author === "jessjelly" && (
+                  <button onClick={() => removeComment(comment.comment_id)}>Delete</button>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
 
 export default CommentList;

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import * as api from '../utils/api'
+import * as api from "../utils/api";
 
 class AddComment extends Component {
   state = {
-    body: '',
+    body: "",
     author: "jessjelly"
   };
 
@@ -27,14 +27,15 @@ class AddComment extends Component {
     this.setState({ [id]: value });
   };
 
-  handleSubmit = async (event) => {
-      event.preventDefault()
-      const newComment = this.state
-      const { article_id, refreshComments } = this.props
-      await api.postComment(article_id, newComment)
-      refreshComments()
-      this.setState({body: ''}) 
-  }
+  handleSubmit = event => {
+    event.preventDefault();
+    const newComment = this.state;
+    const { article_id, refreshComments } = this.props;
+    api.postComment(article_id, newComment).then(comment => {
+      refreshComments(comment);
+    });
+    this.setState({ body: "" });
+  };
 }
 
 export default AddComment;

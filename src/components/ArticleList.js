@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../utils/api";
 import "../styles/ArticleList.css";
+import SortBy from "./SortBy";
 
 class ArticleList extends Component {
   state = {
@@ -14,6 +15,7 @@ class ArticleList extends Component {
     return (
       <section className='articles'>  
       {topic ? <h2>Articles on {topic}</h2> : <h2>All articles</h2>} 
+      <SortBy sortBy={this.sortBy}/>
       <ul className='articles-list'>
         {articles.map(article => {
           return <ArticleCard key={article.article_id} article={article} />;
@@ -30,8 +32,14 @@ class ArticleList extends Component {
   fetchArticles = async () => {
     const { topic } = this.props;
     const articles = await api.getArticles(topic);
-    this.setState({ articles, isLoading: false });
+    this.setState({ articles });
   };
+
+  sortBy = async (query) => {
+    const { topic } = this.props;
+    const articles = await api.getArticles(topic, query)
+    this.setState({ articles })
+  }
 
   componentDidUpdate = (prevProps, prevState) => {
     const newTopic = prevProps.topic !== this.props.topic;

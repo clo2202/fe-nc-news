@@ -12,14 +12,17 @@ class Comments extends Component {
     const { article_id } = this.props;
     return (
       <div>
-        <AddComment refreshComments={this.refreshComments} article_id={article_id}/>
-        <CommentList comments={comments} />
+        <AddComment
+          refreshComments={this.refreshComments}
+          article_id={article_id}
+        />
+        <CommentList comments={comments} removeComment={this.removeComment} />
       </div>
     );
   }
 
   componentDidMount = () => {
-      this.fetchCommentsByArticleId()
+    this.fetchCommentsByArticleId();
   };
 
   fetchCommentsByArticleId = async () => {
@@ -28,16 +31,25 @@ class Comments extends Component {
     this.setState({ comments });
   };
 
-  refreshComments = () => {
-      this.fetchCommentsByArticleId()
-  }
+  removeComment = comment_id => {
+    api.deleteComment(comment_id).then(() => {
+      this.fetchCommentsByArticleId().catch(err => {
+        console.log(err);
+      });
+    });
+  };
+
+  refreshComments = newComment => {
+    const { comments } = this.state;
+    this.setState({ comments: [newComment, ...comments] });
+  };
 
   componentDidUpdate = (prevProps, prevState) => {
-      const newComment = prevState.comments.length !== this.state.comments.length;
-      if (newComment) {
-          this.fetchCommentsByArticleId()
-      }
-  }
+    const newComment = prevState.comments.length !== this.state.comments.length;
+    if (newComment) {
+      this.fetchCommentsByArticleId();
+    }
+  };
 }
 
 export default Comments;

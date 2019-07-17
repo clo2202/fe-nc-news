@@ -7,9 +7,9 @@ export const getTopics = async () => {
   return data.topics;
 };
 
-export const getArticles = async topic => {
+export const getArticles = async (topic, query) => {
   const { data } = await axios.get(`${baseUrl}/articles`, {
-    params: { topic }
+    params: { topic, sort_by: query }
   });
   return data.articles;
 };
@@ -29,7 +29,12 @@ export const postComment = async (article_id, newComment) => {
   return data.comment
 }
 
-export const updateVotes = async (id, inc_votes) => {
-  const { data } = await axios.patch(`${baseUrl}/articles/${id}`, {inc_votes})
-  return data.article
+export const updateVotes = async (id, inc_votes, section) => {
+  const data  = await axios.patch(`${baseUrl}/${section}/${id}`, {inc_votes})
+  return data
+}
+
+export const deleteComment = async (comment_id) => {
+  const { data } = await axios.delete(`${baseUrl}/comments/${comment_id}`)
+  return data 
 }
