@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class SortBy extends Component {
-    render() {
-        const { sortBy } = this.props
-        return (
-            <div>
-               <button onClick={() => sortBy('comment_count')}>Popular</button> 
-               <button onClick={() => sortBy()}>Recent</button> 
-               <button onClick={() => sortBy('votes')}>Rated</button> 
-            </div>
-        );
-    }
-}
+const SortBy = ({ fetchArticles }) => {
+  return (
+    <div>
+      <p>Sort by:</p>
+      <button onClick={() => fetchArticles("comment_count")}>Popular</button>
+      <button onClick={() => fetchArticles()}>Recent</button>
+      <button onClick={() => fetchArticles("votes")}>Rated</button>
+    </div>
+  );
+};
 
 export default SortBy;

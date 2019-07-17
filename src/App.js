@@ -6,6 +6,7 @@ import "../src/styles/App.css";
 import Footer from "./components/Footer";
 import ArticleList from "./components/ArticleList";
 import ArticlePage from "./components/ArticlePage";
+import Error from './components/Errors'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <ArticleList path="/" />
       <ArticleList path="/topics/:topic" />
       <ArticlePage path="/articles/:article_id"/>
+      <Error path="/*"/>
     </Router>
     <Footer />
   </div>

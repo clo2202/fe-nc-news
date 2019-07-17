@@ -33,9 +33,7 @@ class Comments extends Component {
 
   removeComment = comment_id => {
     api.deleteComment(comment_id).then(() => {
-      this.fetchCommentsByArticleId().catch(err => {
-        console.log(err);
-      });
+      this.fetchCommentsByArticleId()
     });
   };
 

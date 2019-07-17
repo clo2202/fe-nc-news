@@ -3,6 +3,7 @@ import ArticleCard from "./ArticleCard";
 import * as api from "../utils/api";
 import "../styles/ArticleList.css";
 import SortBy from "./SortBy";
+import { navigate } from "@reach/router";
 
 class ArticleList extends Component {
   state = {
@@ -15,7 +16,7 @@ class ArticleList extends Component {
     return (
       <section className='articles'>  
       {topic ? <h2>Articles on {topic}</h2> : <h2>All articles</h2>} 
-      <SortBy sortBy={this.sortBy}/>
+      <SortBy fetchArticles={this.fetchArticles}/>
       <ul className='articles-list'>
         {articles.map(article => {
           return <ArticleCard key={article.article_id} article={article} />;
@@ -29,17 +30,16 @@ class ArticleList extends Component {
     this.fetchArticles();
   };
 
-  fetchArticles = async () => {
+  fetchArticles = async (query) => {
     const { topic } = this.props;
-    const articles = await api.getArticles(topic);
-    this.setState({ articles });
+    api.getArticles(topic, query).then((articles) => {
+      this.setState({ articles });
+    }).catch(err => {
+      navigate('/error', {
+        state: { displayErr: 'Topic not found' }
+      })
+    })
   };
-
-  sortBy = async (query) => {
-    const { topic } = this.props;
-    const articles = await api.getArticles(topic, query)
-    this.setState({ articles })
-  }
 
   componentDidUpdate = (prevProps, prevState) => {
     const newTopic = prevProps.topic !== this.props.topic;

@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import Comments from "./Comments";
+import { navigate } from "@reach/router";
 
 class ArticlePage extends Component {
   state = {
-    article: {},
+    article: {}
   };
 
   render() {
     const { article } = this.state;
-    const { article_id } = this.props
+    const { article_id } = this.props;
     return (
       <section className="article">
         <h3>{article.title}</h3>
         <h4>Topic: {article.topic}</h4>
         <h5>Posted by: {article.author}</h5>
         <p>{article.body}</p>
-        <Comments article_id={article_id}/>
+        <Comments article_id={article_id} />
       </section>
     );
   }
@@ -27,8 +28,16 @@ class ArticlePage extends Component {
 
   fetchArticleById = async () => {
     const { article_id } = this.props;
-    const article = await api.getArticleById(article_id);
-    this.setState({ article });
+    api
+      .getArticleById(article_id)
+      .then(article => {
+        this.setState({ article });
+      })
+      .catch(err => {
+        navigate("/error", {
+          state: { displayErr: 'Article not found' }
+        });
+      });
   };
 }
 
