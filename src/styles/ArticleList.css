@@ -4,12 +4,12 @@
   border: solid 2px green;
 }
 
-.articles h3 {
+.articles h2 {
   text-transform: capitalize;
 }
 
 .articles-list {
-  grid-area: main; 
+  grid-area: main;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,9 +20,9 @@
 
 .article-card {
   list-style: none;
-  border: solid #0B0C0C 1px;
-  display: flex;
-  justify-content: space-evenly;
+  border: solid #0b0c0c 1px;
+  display: grid;
+  grid-template-columns: 100px auto;
   width: 90%;
   padding: 8px;
   margin: 5px;
@@ -31,9 +31,15 @@
   color: #ba1531;
 }
 
+/* set article card to be a grid with two columns, left for votes, right for the rest (100px, auto)*/
+
 .article-card:hover {
   box-shadow: 0px 0px 5px 2px #ba1531;
   transform: scale(1.02);
+}
+
+a {
+  text-decoration: none;
 }
 
 .article-card h4 {

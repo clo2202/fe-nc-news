@@ -28,3 +28,8 @@ export const postComment = async (article_id, newComment) => {
   const { data } = await axios.post(`${baseUrl}/articles/${article_id}/comments`, newComment)
   return data.comment
 }
+
+export const updateVotes = async (id, inc_votes) => {
+  const { data } = await axios.patch(`${baseUrl}/articles/${id}`, {inc_votes})
+  return data.article
+}
