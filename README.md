@@ -4,10 +4,9 @@
 
 Content is socially curated and promoted by site members through voting.
 
-The site can be found here 
-The API can be viewed on https://n-coders-news.herokuapp.com/api
+A hosted version of the site can be found here https://nc-news-cw.netlify.com/ 
 
-A hosted version of the site can be found here https://musing-kilby-718682.netlify.com/
+The API can be viewed on https://n-coders-news.herokuapp.com/api
 
 This project was built [Create React App](https://github.com/facebook/create-react-app).
 

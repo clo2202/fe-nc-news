@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 5px;
-    background: #79B4A9;
-    border: solid 2px hotpink;
+    background: #778899;
+    border: white 1px solid;
 }
 
 .nav a {

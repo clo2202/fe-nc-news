@@ -42,12 +42,12 @@ class Comments extends Component {
     this.setState({ comments: [newComment, ...comments] });
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
-    const newComment = prevState.comments.length !== this.state.comments.length;
-    if (newComment) {
-      this.fetchCommentsByArticleId();
-    }
-  };
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   const newComment = prevState.comments.length !== this.state.comments.length;
+  //   if (newComment) {
+  //     this.fetchCommentsByArticleId();
+  //   }
+  // };
 }
 
 export default Comments;

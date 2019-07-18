@@ -1,0 +1,92 @@
+.article-page {
+  padding: 10px;
+}
+
+.article-page h1 {
+  margin: 5px;
+}
+
+.article-page h4 {
+  margin: 5px;
+}
+
+.article-page h5 {
+  margin: 5px;
+}
+
+.article-body {
+  line-height: 1.6;
+  margin: 10px;
+}
+
+.add-comment {
+  background-color: #283e4a;
+  border-radius: 5px;
+}
+
+.add-comment input {
+  height: 30px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.add-comment button {
+  margin: 5px;
+  font-family: "Raleway", sans-serif;
+  padding: 5px;
+  width: 50px;
+  font-size: 16px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.comment-body {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.comment-text {
+  padding-right: 5px;
+  font-size: 14px;
+}
+
+.remove {
+  background-color: #283e4a;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .article-body {
+   font-size: 12px;
+  }
+
+  .comment-body {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .comment button {
+    border: solid 0.5px black;
+    margin-left: 2px;
+    text-align: center;
+  }
+
+  .votes {
+    font-size: 14px;
+  }
+}

@@ -3,12 +3,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     background-color: #283e4a;
     color:white;
-    padding: 10px;
+    padding: 0px;
     letter-spacing: 2px;
     margin: 0;
+    border: white 1px solid;
+  }
+
+  .footer img {
+    padding-right: 10px;
+  }
+
+  .footer a {
+    color:white;
+    text-decoration: none;
+    letter-spacing: 2px;
   }

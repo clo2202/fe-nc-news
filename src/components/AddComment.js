@@ -9,15 +9,16 @@ class AddComment extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='add-comment' onSubmit={this.handleSubmit}>
         <label htmlFor="body" />
         <input
           type="text"
           id="body"
           onChange={this.handleChange}
           value={this.state.body}
+          placeholder='Add a comment...'
         />
-        <button type="submit">Add Comment</button>
+        <button type="submit">Post</button>
       </form>
     );
   }

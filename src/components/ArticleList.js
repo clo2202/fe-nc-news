@@ -7,21 +7,25 @@ import { navigate } from "@reach/router";
 
 class ArticleList extends Component {
   state = {
-    articles: []
+    articles: [],
+    isLoading: true
   };
 
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading } = this.state;
     const { topic } = this.props;
     return (
       <section className="articles">
         {topic ? <h2>{topic} Articles</h2> : <h2>All articles</h2>}
         <SortBy sortBy={this.sortBy} />
+        {isLoading ? (<p>Loading...</p>
+        ) : (
         <ul className="articles-list">
           {articles.map(article => {
             return <ArticleCard key={article.article_id} article={article} />;
           })}
         </ul>
+        )}
       </section>
     );
   }
@@ -35,7 +39,7 @@ class ArticleList extends Component {
     api
       .getArticles(topic)
       .then(articles => {
-        this.setState({ articles });
+        this.setState({ articles, isLoading: false });
       })
       .catch(err => {
         navigate("/error", {
@@ -47,7 +51,7 @@ class ArticleList extends Component {
   sortBy = query => {
     const { topic } = this.props;
     api.getArticles(topic, query).then(articles => {
-      this.setState({ articles });
+      this.setState({ articles, isLoading: false });
     });
   };
 

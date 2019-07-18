@@ -16,14 +16,10 @@ class CommentList extends Component {
                 id={comment.comment_id}
                 section="comments"
               />
-              <div>
-                <p>{comment.body}</p>
-                <p>
-                  <b>Posted by: </b>
-                  {comment.author}
-                </p>
+              <div className='comment-body'>
+                <p className='comment-text'><b>{comment.author}</b><br/>{comment.body}</p>
                 {comment.author === "jessjelly" && (
-                  <button onClick={() => removeComment(comment.comment_id)}>Delete</button>
+                  <button className='remove' onClick={() => removeComment(comment.comment_id)}>X</button>
                 )}
               </div>
             </li>

@@ -1,7 +1,6 @@
 .main {
   grid-area: main;
   overflow-y: scroll;
-  border: solid 2px green;
 }
 
 .articles h2 {
@@ -30,6 +29,7 @@
 .sortby {
   display: flex;
   justify-content: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .sortby button {
@@ -38,6 +38,7 @@
   padding: 5px;
   font-size: 16px;
   border-radius: 2px;
+  font-weight: bold;
 }
 
 .sortby button:hover {
@@ -77,6 +78,7 @@
 
 .article-card a {
   text-decoration: none;
+  color: #283e4a;
 }
 
 .article-card a:hover {
