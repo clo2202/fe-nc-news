@@ -17,7 +17,7 @@ const App = () => {
       <ArticleList path="/" />
       <ArticleList path="/topics/:topic" />
       <ArticlePage path="/articles/:article_id"/>
-      <Error path="/*"/>
+      <Error default path="/error"/>
     </Router>
     <Footer />
   </div>

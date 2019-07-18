@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
-    background-color: #0B0C0C;
+    background-color: #283e4a;
     color:white;
     padding: 10px;
     letter-spacing: 2px;
@@ -16,4 +16,6 @@
   
   h1 span {
     color: #ba1531;
+    letter-spacing: 5px;
+    margin: 5px;
   }

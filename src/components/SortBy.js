@@ -1,12 +1,12 @@
 import React from "react";
 
-const SortBy = ({ fetchArticles }) => {
+const SortBy = ({ sortBy }) => {
   return (
-    <div>
+    <div className='sortby'>
       <p>Sort by:</p>
-      <button onClick={() => fetchArticles("comment_count")}>Popular</button>
-      <button onClick={() => fetchArticles()}>Recent</button>
-      <button onClick={() => fetchArticles("votes")}>Rated</button>
+      <button onClick={() => sortBy("comment_count")}>Popular</button>
+      <button onClick={() => sortBy()}>Recent</button>
+      <button onClick={() => sortBy("votes")}>Rated</button>
     </div>
   );
 };

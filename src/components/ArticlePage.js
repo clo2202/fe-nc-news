@@ -35,7 +35,8 @@ class ArticlePage extends Component {
       })
       .catch(err => {
         navigate("/error", {
-          state: { displayErr: 'Article not found' }
+          replace: true,
+          state: { displayErr: "Sorry, that article does not exist" }
         });
       });
   };

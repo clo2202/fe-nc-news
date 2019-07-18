@@ -12,17 +12,17 @@ class ArticleList extends Component {
 
   render() {
     const { articles } = this.state;
-    const { topic } = this.props
+    const { topic } = this.props;
     return (
-      <section className='articles'>  
-      {topic ? <h2>Articles on {topic}</h2> : <h2>All articles</h2>} 
-      <SortBy fetchArticles={this.fetchArticles}/>
-      <ul className='articles-list'>
-        {articles.map(article => {
-          return <ArticleCard key={article.article_id} article={article} />;
-        })}
-      </ul>
-      </section> 
+      <section className="articles">
+        {topic ? <h2>{topic} Articles</h2> : <h2>All articles</h2>}
+        <SortBy sortBy={this.sortBy} />
+        <ul className="articles-list">
+          {articles.map(article => {
+            return <ArticleCard key={article.article_id} article={article} />;
+          })}
+        </ul>
+      </section>
     );
   }
 
@@ -30,22 +30,30 @@ class ArticleList extends Component {
     this.fetchArticles();
   };
 
-  fetchArticles = async (query) => {
+  fetchArticles = () => {
     const { topic } = this.props;
-    api.getArticles(topic, query).then((articles) => {
-      this.setState({ articles });
-    }).catch(err => {
-      navigate('/error', {
-        state: { displayErr: 'Topic not found' }
+    api
+      .getArticles(topic)
+      .then(articles => {
+        this.setState({ articles });
       })
-    })
+      .catch(err => {
+        navigate("/error", {
+          state: { displayErr: "Sorry, that topic does not exist" }
+        });
+      });
+  };
+
+  sortBy = query => {
+    const { topic } = this.props;
+    api.getArticles(topic, query).then(articles => {
+      this.setState({ articles });
+    });
   };
 
   componentDidUpdate = (prevProps, prevState) => {
     const newTopic = prevProps.topic !== this.props.topic;
-    if (newTopic) {
-      this.fetchArticles()
-    }
+    if (newTopic) this.fetchArticles();
   };
 }
 

@@ -5,15 +5,17 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 5px;
-    background: white;
+    background: #79B4A9;
     border: solid 2px hotpink;
 }
 
 .nav a {
-    color: #ba1531;
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1em;
     text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
 .nav a:hover {

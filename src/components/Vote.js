@@ -10,7 +10,7 @@ class Vote extends Component {
     const { votes } = this.props;
     const { voteChange } = this.state;
     return (
-      <div>
+      <div className='votes'>
         <button onClick={() => this.vote(1)}>+</button>
         <b>{votes + voteChange}</b>
         <button onClick={() => this.vote(-1)}>-</button>
