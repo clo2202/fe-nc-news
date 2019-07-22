@@ -4,7 +4,7 @@ body {
 
 .App {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -22,7 +22,7 @@ body {
 
 .loading-msg {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 

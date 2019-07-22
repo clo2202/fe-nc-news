@@ -20,7 +20,7 @@ class CommentList extends Component {
               <div className='comment-body'>
                 <p className='comment-text'><b>{comment.author}</b><br/>{comment.body}<br/><span className='comment-date'>{moment(`${comment.created_at}`).format("MMM Do YY")}</span></p>
                 {comment.author === "jessjelly" && (
-                  <button className='remove' onClick={() => removeComment(comment.comment_id)}>X</button>
+                  <button className='remove' onClick={() => removeComment(comment.comment_id)}>x</button>
                 )}
               </div>
             </li>

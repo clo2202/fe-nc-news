@@ -28,23 +28,12 @@
 
 .loading-msg {
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
   .article-body {
     font-size: 12px;
-  }
-
-  .article-card {
-    height: 130px;
-  }
-
-  .article-card a {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    font-size: 14px;
   }
 }

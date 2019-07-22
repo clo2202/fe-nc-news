@@ -29,12 +29,12 @@
 .sortby {
   display: flex;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sortby button {
   margin: 5px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 5px;
   font-size: 16px;
   border-radius: 2px;
@@ -115,7 +115,7 @@
 
 .loading-msg {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
@@ -129,19 +129,15 @@
     font-size: 12px;
   }
 
-  .article-body {
-    font-size: 12px;
-  }
-
   .article-card {
-    height: 130px;
+    height: 160px;
   }
 
   .article-card a {
     display: flex;
     align-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .article-author span::before {

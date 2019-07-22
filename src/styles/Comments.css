@@ -26,16 +26,18 @@
 }
 
 .add-comment input {
+  font-family: 'Poppins', sans-serif;
   height: 30px;
   border-radius: 10px;
   width: 70%;
-  margin: 10px;
+  margin: 5px;
+  padding-left: 10px;
   font-size: 14px;
 }
 
 .add-comment button {
   margin: 5px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 5px;
   width: 50px;
   font-size: 16px;
