@@ -4,7 +4,7 @@ import * as api from "../utils/api";
 class AddComment extends Component {
   state = {
     body: "",
-    author: "jessjelly"
+    author: ""
   };
 
   render() {
@@ -25,8 +25,9 @@ class AddComment extends Component {
   }
 
   handleChange = event => {
-    const { value, id } = event.target;
-    this.setState({ [id]: value });
+    const { user } = this.props
+    const { value } = event.target;
+    this.setState({ body: value, author: user });
   };
 
   handleSubmit = event => {
@@ -36,7 +37,7 @@ class AddComment extends Component {
     api.postComment(article_id, newComment).then(comment => {
       refreshComments(comment);
     });
-    this.setState({ body: "" });
+    this.setState({ body: "", author: "" });
   };
 }
 

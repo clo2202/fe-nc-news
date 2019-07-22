@@ -1,0 +1,17 @@
+.error p {
+ font-size: 18px;
+}
+
+.error button {
+    margin: 5px;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.error button:hover {
+    cursor: pointer;
+    background-color: #C6C6C6;
+  }

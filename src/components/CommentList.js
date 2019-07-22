@@ -5,7 +5,7 @@ import moment from 'moment'
 
 class CommentList extends Component {
   render() {
-    const { comments, removeComment } = this.props;
+    const { comments, removeComment, user } = this.props;
     return (
       <div className="comment-section">
         <h4><span role="img" aria-label="comment">&#128172;</span> {comments.length} Comments</h4>
@@ -19,7 +19,7 @@ class CommentList extends Component {
               />
               <div className='comment-body'>
                 <p className='comment-text'><b>{comment.author}</b><br/>{comment.body}<br/><span className='comment-date'>{moment(`${comment.created_at}`).format("MMM Do YY")}</span></p>
-                {comment.author === "jessjelly" && (
+                {comment.author === user && (
                   <button className='remove' onClick={() => removeComment(comment.comment_id)}>x</button>
                 )}
               </div>

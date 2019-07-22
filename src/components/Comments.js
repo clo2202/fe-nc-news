@@ -9,14 +9,15 @@ class Comments extends Component {
   };
   render() {
     const { comments } = this.state;
-    const { article_id } = this.props;
+    const { article_id, user } = this.props;
     return (
       <div>
         <AddComment
           refreshComments={this.refreshComments}
           article_id={article_id}
+          user={user}
         />
-        <CommentList comments={comments} removeComment={this.removeComment} />
+        <CommentList user={user} comments={comments} removeComment={this.removeComment} />
       </div>
     );
   }

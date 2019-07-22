@@ -38,3 +38,8 @@ export const deleteComment = async (comment_id) => {
   const { data } = await axios.delete(`${baseUrl}/comments/${comment_id}`)
   return data 
 }
+
+export const getUsers = async () => {
+  const { data } = await axios.get(`${baseUrl}/users`)
+  return data.users
+}

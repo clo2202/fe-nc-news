@@ -14,7 +14,7 @@ class ArticlePage extends Component {
 
   render() {
     const { article, isLoading } = this.state;
-    const { article_id } = this.props;
+    const { article_id, user } = this.props;
     return (
       <section className="article-page">
         {isLoading ? (
@@ -25,7 +25,7 @@ class ArticlePage extends Component {
             <h4>Topic: {article.topic}</h4>
             <h5>Posted by: {article.author} <span className='date'>{moment(`${article.created_at}`).format("MMM Do YY")}</span></h5>
             <p className="article-body">{article.body}</p>
-            <Comments article_id={article_id} />
+            <Comments user={user} article_id={article_id} />
           </div>
         )}
       </section>
@@ -36,7 +36,7 @@ class ArticlePage extends Component {
     this.fetchArticleById();
   };
 
-  fetchArticleById = async () => {
+  fetchArticleById = () => {
     const { article_id } = this.props;
     api
       .getArticleById(article_id)
