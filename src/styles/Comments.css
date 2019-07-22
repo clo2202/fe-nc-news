@@ -1,20 +1,100 @@
 .comments-list {
-    grid-area: main;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0;
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+
+.comment {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 100px auto;
+  width: 90%;
+  padding: 8px;
+  margin: 5px;
+  text-decoration: none;
+  border-bottom: 1px gray solid;
+}
+
+
+.add-comment {
+  background-color: #283e4a;
+  border-radius: 5px;
+}
+
+.add-comment input {
+  height: 30px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.add-comment button {
+  margin: 5px;
+  font-family: "Raleway", sans-serif;
+  padding: 5px;
+  width: 50px;
+  font-size: 16px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.comment-body {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.comment-text {
+  padding-right: 5px;
+  font-size: 14px;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #616770;
+}
+
+.remove {
+  background-color: #283e4a;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .comment-text {
+    font-size: 12px;
     margin: 0;
+    padding: 5px;
   }
 
   .comment {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 100px auto;
-    width: 90%;
-    padding: 8px;
-    margin: 5px;
-    text-decoration: none;
-    border-bottom: 1px gray solid;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
+
+  .comment button {
+    border: solid 0.5px black;
+    margin: 2px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .votes {
+    font-size: 14px;
+  }
+
+  .votes button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

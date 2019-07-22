@@ -18,7 +18,7 @@ class ArticleList extends Component {
       <section className="articles">
         {topic ? <h2>{topic} Articles</h2> : <h2>All articles</h2>}
         <SortBy sortBy={this.sortBy} />
-        {isLoading ? (<p>Loading...</p>
+        {isLoading ? (<p className='loading-msg'>Loading...</p>
         ) : (
         <ul className="articles-list">
           {articles.map(article => {

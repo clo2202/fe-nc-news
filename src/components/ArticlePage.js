@@ -3,6 +3,8 @@ import * as api from "../utils/api";
 import Comments from "./Comments";
 import { navigate } from "@reach/router";
 import "../styles/Articles.css";
+import '../styles/Comments.css';
+import moment from 'moment';
 
 class ArticlePage extends Component {
   state = {
@@ -16,18 +18,15 @@ class ArticlePage extends Component {
     return (
       <section className="article-page">
         {isLoading ? (
-          <p>Loading...</p>
+          <p className="loading-msg">Loading...</p>
         ) : (
           <div>
             <h1>{article.title}</h1>
             <h4>Topic: {article.topic}</h4>
-            <h5>Posted by: {article.author}</h5>
+            <h5>Posted by: {article.author} <span className='date'>{moment(`${article.created_at}`).format("MMM Do YY")}</span></h5>
             <p className="article-body">{article.body}</p>
+            <Comments article_id={article_id} />
           </div>
-        )}
-        {isLoading ? (<p>Loading...</p>
-        ) : (
-        <Comments article_id={article_id} />
         )}
       </section>
     );

@@ -96,6 +96,12 @@
   margin: 5px;
 }
 
+.article-date {
+ font-size: 12px;
+ color: #616770;
+ margin-left: 10px;
+}
+
 .votes {
   display: flex;
   justify-content: center;
@@ -105,4 +111,41 @@
 .votes button {
   margin: 5px;
   font-size: 16px;
+}
+
+.loading-msg {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .sortby p {
+    font-size: 12px;
+  }
+
+  .sortby button {
+    font-size: 12px;
+  }
+
+  .article-body {
+    font-size: 12px;
+  }
+
+  .article-card {
+    height: 130px;
+  }
+
+  .article-card a {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .article-author span::before {
+    content: "\A";
+    white-space: pre;
+   }
 }

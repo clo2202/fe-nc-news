@@ -1,6 +1,7 @@
 import Vote from "./Vote";
 import "../styles/Comments.css";
 import React, { Component } from "react";
+import moment from 'moment'
 
 class CommentList extends Component {
   render() {
@@ -17,7 +18,7 @@ class CommentList extends Component {
                 section="comments"
               />
               <div className='comment-body'>
-                <p className='comment-text'><b>{comment.author}</b><br/>{comment.body}</p>
+                <p className='comment-text'><b>{comment.author}</b><br/>{comment.body}<br/><span className='comment-date'>{moment(`${comment.created_at}`).format("MMM Do YY")}</span></p>
                 {comment.author === "jessjelly" && (
                   <button className='remove' onClick={() => removeComment(comment.comment_id)}>X</button>
                 )}
