@@ -1,7 +1,7 @@
 import "../styles/Header.css";
 import { Link } from "@reach/router";
 import React, { Component } from "react";
-import avatar from '../images/avatar.png'
+import avatar from "../images/avatar.png";
 
 class Header extends Component {
   render() {
@@ -13,16 +13,16 @@ class Header extends Component {
             <span>{"<"}</span> NC News <span>{" />"}</span>
           </Link>
         </h1>
-        <div className='user'>
-        <img src={avatar} height="30px" width="30px" alt="github" />
-        <p>Logged in as:</p>
-        <select onChange={this.handleChange}>
-          {users.map(user => (
-            <option value={user.username} key={user.username}>
-              {user.username}
-            </option>
-          ))}
-        </select>
+        <div className="user">
+          <img src={avatar} height="30px" width="30px" alt="avatar" />
+          <p>Logged in as:</p>
+          <select onChange={this.handleChange}>
+            {users.map(user => (
+              <option value={user.username} key={user.username}>
+                {user.username}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     );
